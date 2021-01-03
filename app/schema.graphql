@@ -1,0 +1,13 @@
+type Subscription {
+  message: String
+}
+
+type Query {
+  helloWorld: String
+}
+
+# ----------------- MUTATIONS
+
+type Mutation {
+  publishMessage(message: String): String
+}
