@@ -26,10 +26,9 @@ const PORT = process.env.PORT || 4000
 const apollo = new ApolloServer({
   resolvers,
   typeDefs,
-  uploads: false, // using graphqlUploadExpress middleware instead
+  uploads: false,
   playground: true,
   introspection: true
-  // context: async ({ req }) => {}
 })
 
 const app = express()
@@ -39,7 +38,6 @@ apollo.applyMiddleware({ app })
 
 const server = http.createServer(app)
 
-// create websocket server
 const wsServer = new ws.Server({
   server,
   path: '/graphql'
